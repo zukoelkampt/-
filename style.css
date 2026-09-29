@@ -1,0 +1,362 @@
+/* тема */
+
+:root {
+    --color-shapka-bg: #a100ff; 
+    --color-knopka-bg: #280079;
+    --color-istoriya-bg: #58538b;
+    --color-podval-bg: #3d348b;
+    --color-text: #ffffff;
+    --color-text-muted: rgba(255, 255, 255, 0.85);
+
+    --font-main: 'PT Sans', Arial, sans-serif;
+}
+
+
+html[data-theme="dark"] {
+    --color-shapka-bg: #32004e;
+    --color-knopka-bg: #DDCDFF;
+    --color-istoriya-bg: #322c52;
+    --color-podval-bg: #201a3d;
+    --color-text: #ffffff;
+    --color-text-muted: rgba(255, 255, 255, 0.75);
+}
+
+/* база */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-istoriya-bg);
+    color: var(--color-text);
+    line-height: 1.4;
+    transition: background-color 0.3s ease;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* шапка */
+
+.shapka {
+    background-color: var(--color-shapka-bg);
+    height: 110px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.shapka__konteyner {
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 27px 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shapka__logo {
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 48px;
+    color: var(--color-text);
+    letter-spacing: 0;
+}
+
+.shapka__knopka-temy {
+    width: 130px;
+    height: 59px;
+    background-color: var(--color-knopka-bg);
+    border: none;
+    border-radius: 15px;
+    color: var(--color-text);
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.shapka__knopka-temy:hover {
+    transform: scale(1.05);
+}
+
+.shapka__knopka-temy:active {
+    transform: scale(0.97);
+}
+
+/* экран */
+
+.glavnyi {
+    min-height: 750px;
+    background-color: #7a2fc9;
+    background-image: url(img/фон.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.glavnyi__konteyner {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 89px 75px 89px 153px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    gap: 40px; 
+    flex-wrap: wrap;
+}
+
+.glavnyi__tekst {
+    flex: 0 1 663px; 
+    min-width: 280px;
+    max-width: 663px;
+    padding-top: 126px; 
+}
+
+.glavnyi__zagolovok {
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 1.4;
+    color: var(--color-text);
+    margin-bottom: -9px; 
+}
+
+.glavnyi__podzagolovok {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--color-text);
+    max-width: 646px;
+}
+
+.glavnyi__kartinki {
+    flex: 0 1 842px;
+    min-width: 280px;
+    max-width: 842px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 24px; 
+}
+
+.glavnyi__kartinka {
+    width: 100%;
+    aspect-ratio: 409 / 273; 
+    height: auto;
+    object-fit: cover;
+    border-radius: 38px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* 4 секции */
+
+.istoriya {
+    background-color: var(--color-istoriya-bg);
+    transition: background-color 0.3s ease;
+}
+
+.istoriya__konteyner {
+    max-width: 1920px;
+    min-height: 945px;
+    margin: 0 auto;
+    padding: 57px 93px 75px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.istoriya__zagolovok {
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 1.4;
+    color: var(--color-text);
+    max-width: 1370px;
+    margin-bottom: 25px; 
+}
+
+.istoriya__opisanie {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.4;
+    color: var(--color-text-muted);
+    max-width: 739px;
+    margin-bottom: 66px; 
+}
+
+.istoriya__kartinki {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 153px; 
+    margin-top: auto;
+}
+
+.istoriya__kartinka {
+    width: 100%;
+    aspect-ratio: 476 / 334; 
+    height: auto;
+    object-fit: cover;
+    border-radius: 38px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.istoriya__kartinka:hover {
+    transform: translateY(-6px);
+}
+
+/* истории */
+.istoriya--sprava .istoriya__zagolovok,
+.istoriya--sprava .istoriya__opisanie {
+    margin-left: auto;
+    text-align: right;
+}
+
+.istoriya--centr .istoriya__zagolovok,
+.istoriya--centr .istoriya__opisanie {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.istoriya--centr .istoriya__opisanie {
+    max-width: 1726px;
+}
+
+.istoriya--centr .istoriya__kartinki {
+    justify-content: center;
+}
+
+/* подвал */
+
+.podval {
+    background-color: var(--color-podval-bg);
+    transition: background-color 0.3s ease;
+}
+
+.podval__konteyner {
+    max-width: 1920px;
+    min-height: 358px;
+    margin: 0 auto;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.podval__tekst {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.4;
+    color: var(--color-text);
+    margin-bottom: 109px; 
+}
+
+.podval__heshteg {
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: var(--color-text);
+    opacity: 0.5;
+}
+
+/* моб. адаптация (доделать) */
+
+@media (max-width: 768px) {
+    .shapka__konteyner { padding: 0 16px; }
+    .shapka__logo { font-size: 22px; }
+    .shapka__knopka-temy { width: 84px; height: 42px; font-size: 15px; border-radius: 10px; }
+ 
+    .glavnyi { min-height: auto; }
+    .glavnyi__konteyner { padding: 40px 16px; gap: 30px; }
+    .glavnyi__zagolovok { font-size: 36px; margin-bottom: 16px; }
+    .glavnyi__podzagolovok { font-size: 16px; }
+    .glavnyi__kartinki { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .glavnyi__kartinka { border-radius: 20px; }
+ 
+    .istoriya__konteyner { padding: 40px 16px; }
+    .istoriya__zagolovok { font-size: 30px; margin-bottom: 16px; }
+    .istoriya__opisanie { font-size: 16px; margin-bottom: 24px; }
+    .istoriya__kartinki { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .istoriya__kartinka { border-radius: 20px; }
+ 
+    .istoriya--sprava .istoriya__zagolovok,
+    .istoriya--sprava .istoriya__opisanie { text-align: left; margin-left: 0; }
+    .istoriya--centr .istoriya__zagolovok,
+    .istoriya--centr .istoriya__opisanie { text-align: center; }
+ 
+    .podval__konteyner { padding: 30px 16px; }
+    .podval__tekst { font-size: 22px; margin-bottom: 24px; }
+}
+ 
+@media (max-width: 480px) {
+    .shapka { height: 19px; }
+    .shapka__konteyner { padding: 0 5px 0 4px; }
+    .shapka__logo { font-size: 8.4px; }
+    .shapka__knopka-temy { width: 22.7px; height: 10.3px; font-size: 4.2px; border-radius: 2.6px; }
+ 
+    .glavnyi { min-height: 131px; }
+    .glavnyi__konteyner {
+        flex-direction: row;
+        padding: 15.6px 13.1px 15.6px 26.8px;
+        gap: 7px;
+    }
+    .glavnyi__tekst { flex: 0 1 116px; min-width: 0; max-width: 116px; padding-top: 22px; }
+    .glavnyi__zagolovok { font-size: 16.8px; margin-bottom: -1.6px; }
+    .glavnyi__podzagolovok { font-size: 4.2px; max-width: 113px; }
+    .glavnyi__kartinki {
+        flex: 0 1 147.3px;
+        width: auto;
+        min-width: 0;
+        max-width: 147.3px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4.2px;
+    }
+    .glavnyi__kartinka { border-radius: 6.6px; box-shadow: 0 1.7px 5.2px rgba(0, 0, 0, 0.25); }
+ 
+    .istoriya__konteyner { min-height: 165px; padding: 10px 16.3px 13.1px; }
+    .istoriya__zagolovok { font-size: 16.8px; max-width: 240px; margin-bottom: 4.4px; }
+    .istoriya__opisanie { font-size: 4.9px; max-width: 129px; margin-bottom: 11.5px; }
+    .istoriya__kartinki { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26.8px; }
+    .istoriya__kartinka { border-radius: 6.6px; box-shadow: 0 1.7px 5.2px rgba(0, 0, 0, 0.25); }
+ 
+    .istoriya--sprava .istoriya__zagolovok,
+    .istoriya--sprava .istoriya__opisanie { text-align: right; margin-left: auto; margin-right: 0; }
+    .istoriya--centr .istoriya__zagolovok,
+    .istoriya--centr .istoriya__opisanie { text-align: center; margin-left: auto; margin-right: auto; }
+    .istoriya--centr .istoriya__opisanie { max-width: 302px; }
+ 
+    .podval__konteyner { min-height: 62.6px; padding: 7.5px 4px 3px; }
+    .podval__tekst { font-size: 7px; margin-bottom: 29.3px; }
+    .podval__heshteg { font-size: 2.3px; letter-spacing: 0.2px; }
+}
+ 
+/* доступность */
+ 
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+ 
+::selection {
+    background-color: var(--color-knopka-bg);
+    color: #ffffff;
+}
